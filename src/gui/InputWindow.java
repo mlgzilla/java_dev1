@@ -45,15 +45,29 @@ public class InputWindow extends JFrame {
                     JOptionPane.showMessageDialog(null, "All fields must be filled!");
                     return;
                 }
+                Integer tempId = null, tempYear = null;
+                try {
+                    tempId = Integer.parseInt(idTextField.getText());
+                } catch (Exception exception){
+                    JOptionPane.showMessageDialog(null, "Wrong input for id field");
+                    return;
+                }
+
+                try {
+                    tempYear = Integer.parseInt(yearTextField.getText());
+                } catch (Exception exception){
+                    JOptionPane.showMessageDialog(null, "Wrong input for year field");
+                    return;
+                }
 
                 TransportMachine transportMachine = new TransportMachine(
-                        Integer.parseInt(idTextField.getText()),
+                        tempId,
                         makeTextField.getText(),
                         modelTextField.getText(),
                         categoryTextField.getText(),
                         regNumbTextField.getText(),
                         mTypeComboBox.getSelectedItem().toString(),
-                        Integer.parseInt(yearTextField.getText()),
+                        tempYear,
                         hasTrailerCheckBox.isSelected()
                 );
 

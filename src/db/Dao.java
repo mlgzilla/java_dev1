@@ -30,6 +30,7 @@ public class Dao {
                 ));
             }
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed to get entries from database");
             throw new RuntimeException(e);
         }
         return ts_machines;
@@ -45,6 +46,7 @@ public class Dao {
                 return;
             }
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed to get entry from database");
             throw new RuntimeException(e);
         }
 
@@ -61,6 +63,7 @@ public class Dao {
             preparedStatement.setBoolean(7, transportMachine.hasTrailer());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed to insert entry from database");
             throw new RuntimeException(e);
         }
     }
@@ -92,6 +95,7 @@ public class Dao {
             preparedStatement.setInt(8, transportMachine.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Failed to update entry from database");
             throw new RuntimeException(e);
         }
     }

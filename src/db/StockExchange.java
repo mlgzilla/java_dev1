@@ -1,5 +1,6 @@
 package db;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,6 +14,7 @@ public class StockExchange {
         try {
             conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Could not establish connection with database");
             throw new RuntimeException(e);
         }
         return conn;
