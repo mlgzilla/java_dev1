@@ -27,7 +27,7 @@ public class TransportMachine {
     }
 
     public Vector<String> toVector(){
-        Vector<String> vec = new Vector<String>(8);
+        Vector<String> vec = new Vector<>(8);
         vec.add(String.valueOf(id));
         vec.add(make);
         vec.add(model);

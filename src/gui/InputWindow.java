@@ -102,9 +102,4 @@ public class InputWindow extends JFrame {
             }
         });
     }
-
-    public static void main(String[] args){
-        new InputWindow();
-    }
-
 }
